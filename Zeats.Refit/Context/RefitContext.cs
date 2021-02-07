@@ -5,10 +5,10 @@ namespace Zeats.Refit.Context
 {
     public class RefitContext
     {
-        public RefitContext(string apiUrl, RefitSettings refit = null)
+        public RefitContext(string apiUrl, RefitSettings refitSettings = null)
         {
             ApiUrl = apiUrl;
-            Settings = refit ?? new RefitSettings
+            Settings = refitSettings ?? new RefitSettings
             {
                 ContentSerializer = new SystemTextJsonContentSerializer(JsonConfiguration.Options)
             };
