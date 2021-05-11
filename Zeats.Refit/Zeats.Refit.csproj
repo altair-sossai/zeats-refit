@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Refit" Version="6.0.8" />
+    <PackageReference Include="Refit" Version="6.0.38" />
     <PackageReference Include="Zeats.Json" Version="1.0.0.8" />
   </ItemGroup>
 

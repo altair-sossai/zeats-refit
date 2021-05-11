@@ -10,7 +10,7 @@
     <iconUrl>https://zeatsbalancaautomatica.blob.core.windows.net/icons/nuget.png</iconUrl>
     <dependencies>
       <group targetFramework=".NETCoreApp3.1">
-        <dependency id="Refit" version="6.0.8" exclude="Build,Analyzers" />
+        <dependency id="Refit" version="6.0.38" exclude="Build,Analyzers" />
         <dependency id="Zeats.Json" version="1.0.0.8" exclude="Build,Analyzers" />
       </group>
     </dependencies>
