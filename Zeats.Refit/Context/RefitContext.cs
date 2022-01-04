@@ -1,26 +1,27 @@
 ﻿using Refit;
 using Zeats.Json;
 
-namespace Zeats.Refit.Context;
-
-public class RefitContext
+namespace Zeats.Refit.Context
 {
-    public RefitContext(string apiUrl, RefitSettings refitSettings = null)
+    public class RefitContext
     {
-        ApiUrl = apiUrl;
-        Settings = refitSettings ?? new RefitSettings
+        public RefitContext(string apiUrl, RefitSettings refitSettings = null)
         {
-            ContentSerializer = new SystemTextJsonContentSerializer(JsonConfiguration.Options)
-        };
-    }
+            ApiUrl = apiUrl;
+            Settings = refitSettings ?? new RefitSettings
+            {
+                ContentSerializer = new SystemTextJsonContentSerializer(JsonConfiguration.Options)
+            };
+        }
 
-    public string ApiUrl { get; set; }
-    public RefitSettings Settings { get; set; }
+        public string ApiUrl { get; set; }
+        public RefitSettings Settings { get; set; }
 
-    public T CreateServer<T>()
-    {
-        return Settings == null
-            ? RestService.For<T>(ApiUrl)
-            : RestService.For<T>(ApiUrl, Settings);
+        public T CreateServer<T>()
+        {
+            return Settings == null
+                ? RestService.For<T>(ApiUrl)
+                : RestService.For<T>(ApiUrl, Settings);
+        }
     }
 }
